@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "flake8-cmk-addons"
+version = "2.3.0"
+description = "A flake8 plugin checking common issues in Checkmk addons."
+authors = ["Marius Rieder <marius.rieder@durchmesser.ch>"]
+license = "MIT"
+readme = 'README.md'
+repository = "https://github.com/jiuka/flake8-cmk-addons"
+homepage = "https://github.com/jiuka/flake8-cmk-addons"
+keywords = ["flake8", "cmk", "checkmk"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Environment :: Plugins",
+  "Framework :: Flake8",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+[tool.poetry.plugins."flake8.extension"]
+CA = 'flake8_cmk_addons.plugin:CmkAddonsPlugin'
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flake8-plugin-utils = "^1.3.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+flake8 = "^7"
